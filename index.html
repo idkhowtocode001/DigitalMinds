@@ -29,11 +29,11 @@
       <div class="hidden lg:flex lg:gap-x-12">
         <a href="#about" class="text-sm/6 font-semibold text-gray-900">About Us</a>
         <a href="#team" class="text-sm/6 font-semibold text-gray-900">Our Team</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Join Us</a>
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Resources</a>
+        <a href="#resources" class="text-sm/6 font-semibold text-gray-900">Resources</a>
+        <a href="#join" class="text-sm/6 font-semibold text-gray-900">Join Us</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm/6 font-semibold text-gray-900">Contact Us</a>
+        <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contact Us</a>
       </div>
     </nav>
     <el-dialog>
@@ -59,11 +59,11 @@
                   <a href="#team"
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Our
                     Team</a>
-                  <a href="#"
+                  <a href="#resources"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources</a>
+                  <a href="#join"
                     class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Join
                     Us</a>
-                  <a href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources</a>
                 </div>
               </div>
             </div>
@@ -72,10 +72,6 @@
       </dialog>
     </el-dialog>
   </header>
-  <!-- <div class="h-screen flex items-center" id="hero">
-    <video src="./img/hero.webm" autoplay muted loop class=""></video>
-    <h1 class="text-4xl md:text-[4vw] z-2 absolute top-1/2 left-1/2 -translate-1/2">Digital Minds</h1>
-  </div> -->
   <div class="bg-white" id="about">
     <div class="px-6 py-24 sm:py-32 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
@@ -131,21 +127,74 @@
       </ul>
     </div>
   </div>
-  <div class="relative isolate overflow-hidden bg-white py-24 sm:py-32">
+  <div class="bg-white py-24 sm:py-32" id="resources">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Resources</h2>
+        <p class="mt-2 text-lg/8 text-gray-600">Learn from our experts about new developments and insights.</p>
+      </div>
+      <div
+        class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <article
+          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
+          <img src="/img/html.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
+          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
+          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
+
+          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+            <time datetime="2020-03-16" class="mr-8">Mar 16, 2026</time>
+          </div>
+          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+            <a href="https://www.w3schools.com/html/default.asp" target="_blank">
+              <span class="absolute inset-0"></span>
+              Starting with HTML: a beginner's guide to building your first webpage
+            </a>
+          </h3>
+        </article>
+        <article
+          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
+          <img src="/img/css.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
+          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
+          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
+
+          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+            <time datetime="2020-03-10" class="mr-8">Mar 10, 2026</time>
+          </div>
+          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+            <a href="https://www.w3schools.com/css/default.asp" target="_blank">
+              <span class="absolute inset-0"></span>
+              Style your site: an introduction to CSS for beginners
+            </a>
+          </h3>
+        </article>
+        <article
+          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
+          <img src="/img/js.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
+          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
+          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
+
+          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+            <time datetime="2020-02-12" class="mr-8">Feb 12, 2026</time>
+          </div>
+          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+            <a href="https://www.w3schools.com/js/default.asp" target="_blank">
+              <span class="absolute inset-0"></span>
+              Javascript for beginners: what you need to know to get started
+            </a>
+          </h3>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="relative isolate overflow-hidden bg-white py-24 sm:py-32" id="join">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Work with us</h2>
-        <p class="mt-8 text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">Anim aute id magna aliqua ad ad non
-          deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.</p>
+        <p class="mt-8 text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">Discover how you can make an impact:
+          see our areas of work,
+          worldwide locations and opportunities for students.</p>
       </div>
       <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-        <div
-          class="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-gray-900 sm:grid-cols-2 md:flex lg:gap-x-10">
-          <a href="#">Open roles</a>
-          <a href="#">Internship program</a>
-          <a href="#">Our values</a>
-          <a href="#">Meet our leadership</a>
-        </div>
         <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           <div class="flex flex-col-reverse gap-1">
             <dt class="text-base/7 text-gray-700">Offices worldwide</dt>
@@ -157,7 +206,7 @@
           </div>
           <div class="flex flex-col-reverse gap-1">
             <dt class="text-base/7 text-gray-700">Hours per week</dt>
-            <dd class="text-4xl font-semibold tracking-tight text-gray-900">40</dd>
+            <dd class="text-4xl font-semibold tracking-tight text-gray-900">30</dd>
           </div>
           <div class="flex flex-col-reverse gap-1">
             <dt class="text-base/7 text-gray-700">Paid time off</dt>
@@ -167,13 +216,14 @@
       </div>
     </div>
   </div>
-  <div class="relative isolate bg-white">
+  <div class="relative isolate bg-white" id="contact">
     <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
       <div class="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
         <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
           <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Get in touch</h2>
-          <p class="mt-6 text-lg/8 text-gray-600">Proin volutpat consequat porttitor cras nullam gravida at. Orci
-            molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p>
+          <p class="mt-6 text-lg/8 text-gray-600">Want to learn more and join our team? Contact us to discuss career
+            opportunities,
+            research collaborations, or any questions you may have.</p>
           <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
             <div class="flex gap-x-4">
               <dt class="flex-none">
@@ -185,7 +235,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
-              <dd>545 Mavis Island<br />Chicago, IL 99191</dd>
+              <dd>King's Rd, Reading, United Kingdom</dd>
             </div>
             <div class="flex gap-x-4">
               <dt class="flex-none">
@@ -197,7 +247,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
-              <dd><a href="tel:+1 (555) 234-5678" class="hover:text-gray-900">+1 (555) 234-5678</a></dd>
+              <dd><a href="tel:+44 0800 612 6008" class="hover:text-gray-900">+ 44 0800 612 6008</a></dd>
             </div>
             <div class="flex gap-x-4">
               <dt class="flex-none">
@@ -209,7 +259,7 @@
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
-              <dd><a href="mailto:hello@example.com" class="hover:text-gray-900">hello@example.com</a></dd>
+              <dd><a href="mailto:hello@digitalminds.com" class="hover:text-gray-900">hello@digitalminds.com</a></dd>
             </div>
           </dl>
         </div>
@@ -262,8 +312,6 @@
       </form>
     </div>
   </div>
-
-
 </body>
 
 </html>
