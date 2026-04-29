@@ -6,455 +6,389 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Minds</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
-  <header class="bg-white/70 fixed top-0 w-full backdrop-blur-lg border border-b border-gray-300/40 z-5">
-    <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="text-sm/6 font-semibold text-gray-900">Digital Minds</span>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Global">
+      <div class="logo-container">
+        <a href="#" class="logo-link">
+          <span class="logo-text">Digital Minds</span>
         </a>
       </div>
-      <div class="flex lg:hidden">
-        <button type="button" command="show-modal" commandfor="mobile-menu"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-            aria-hidden="true" class="size-6">
+      
+      <div class="mobile-menu-btn-container">
+        <button type="button" class="mobile-menu-btn" command="show-modal" commandfor="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
             <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
       </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#about" class="text-sm/6 font-semibold text-gray-900">About Us</a>
-        <a href="#team" class="text-sm/6 font-semibold text-gray-900">Our Team</a>
-        <a href="#resources" class="text-sm/6 font-semibold text-gray-900">Resources</a>
-        <a href="#join" class="text-sm/6 font-semibold text-gray-900">Join Us</a>
+
+      <div class="desktop-nav-links">
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#team" class="nav-link">Our Team</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#join" class="nav-link">Join Us</a>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#contact" class="text-sm/6 font-semibold text-gray-900">Contact Us</a>
+
+      <div class="desktop-nav-cta">
+        <a href="#contact" class="nav-link">Contact Us</a>
       </div>
     </nav>
-    <el-dialog>
-      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
-        <div tabindex="0" class="fixed inset-0 focus:outline-none">
-          <el-dialog-panel
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-end">
-              <button type="button" command="close" commandfor="mobile-menu"
-                class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                  aria-hidden="true" class="size-6">
-                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
+
+    <dialog id="mobile-menu" class="mobile-dialog">
+      <div tabindex="0" class="dialog-focus-trap">
+        <div class="dialog-panel">
+          <div class="dialog-header">
+            <button type="button" class="close-menu-btn" command="close" commandfor="mobile-menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="icon">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="dialog-body">
+            <div class="mobile-nav-links">
+              <a href="#about" class="mobile-link">About Us</a>
+              <a href="#team" class="mobile-link">Our Team</a>
+              <a href="#resources" class="mobile-link">Resources</a>
+              <a href="#join" class="mobile-link">Join Us</a>
             </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="#about"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About
-                    Us</a>
-                  <a href="#team"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Our
-                    Team</a>
-                  <a href="#resources"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Resources</a>
-                  <a href="#join"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Join
-                    Us</a>
-                </div>
-              </div>
-            </div>
-          </el-dialog-panel>
+          </div>
         </div>
-      </dialog>
-    </el-dialog>
+      </div>
+    </dialog>
   </header>
-  <div class="relative isolate">
-    <svg aria-hidden="true"
-      class="absolute inset-x-0 top-0 -z-10 h-256 w-full mask-[radial-gradient(32rem_32rem_at_center,white,transparent)] stroke-gray-200">
+
+  <section class="hero-section">
+    <svg aria-hidden="true" class="hero-bg-svg">
       <defs>
-        <pattern id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84" width="200" height="200" x="50%" y="-1"
-          patternUnits="userSpaceOnUse">
+        <pattern id="pattern-id" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
           <path d="M.5 200V.5H200" fill="none" />
         </pattern>
       </defs>
-      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-        <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-          stroke-width="0" />
+      <svg x="50%" y="-1" class="hero-bg-inner-svg">
+        <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
       </svg>
-      <rect width="100%" height="100%" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" stroke-width="0" />
+      <rect width="100%" height="100%" fill="url(#pattern-id)" stroke-width="0" />
     </svg>
-    <div class="overflow-hidden">
-      <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
-        <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-          <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-            <h1 class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">We’re building the
-              future of the digital landscape.</h1>
-            <p class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none"> We are
-              looking for passionate junior
-              and senior developers to join our award-winning team in creating high-impact web solutions.</p>
-            <div class="mt-10 flex items-center gap-x-6">
-              <a href="#contact"
-                class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Get in Touch</a>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-text-box">
+          <h1 class="hero-title">We’re building the future of the digital landscape.</h1>
+          <p class="hero-description">We are looking for passionate junior and senior developers to join our award-winning team in creating high-impact web solutions.</p>
+          <div class="hero-cta-box">
+            <a href="#contact" class="btn-primary">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-images-box">
+          <div class="hero-col col-1">
+            <div class="image-wrapper">
+              <img src="./img/hero1.png" alt="Hero Image 1" class="hero-img" />
+              <div class="image-overlay"></div>
             </div>
           </div>
-          <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-            <div
-              class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-0 xl:pt-80">
-              <div class="relative">
-                <img src="./img/hero1.png" alt=""
-                  class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-              </div>
+          <div class="hero-col col-2">
+            <div class="image-wrapper">
+              <img src="./img/hero2.png" alt="Hero Image 2" class="hero-img" />
+              <div class="image-overlay"></div>
             </div>
-            <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-              <div class="relative">
-                <img src="./img/hero2.png" alt=""
-                  class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-              </div>
-              <div class="relative">
-                <img src="./img/hero3.png" alt=""
-                  class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-              </div>
+            <div class="image-wrapper">
+              <img src="./img/hero3.png" alt="Hero Image 3" class="hero-img" />
+              <div class="image-overlay"></div>
             </div>
-            <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-              <div class="relative">
-                <img src="./img/hero4.png" alt=""
-                  class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-              </div>
-              <div class="relative">
-                <img src="./img/hero5.png" alt=""
-                  class="aspect-2/3 w-full rounded-xl bg-gray-900/5 object-cover shadow-lg" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-              </div>
+          </div>
+          <div class="hero-col col-3">
+            <div class="image-wrapper">
+              <img src="./img/hero4.png" alt="Hero Image 4" class="hero-img" />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/hero5.png" alt="Hero Image 5" class="hero-img" />
+              <div class="image-overlay"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="bg-white" id="about">
-    <div class="px-6 py-24 sm:py-32 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">About Us</h2>
-        <p class="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-600">
-          Digital Minds is a leading development agency dedicated to innovation and technical excellence.
-          Our mission is to bridge the gap between complex client needs and seamless user experiences through clean,
-          efficient code.</p>
-      </div>
-    </div>
-  </div>
+  </section>
 
-  <div class="bg-white py-24 md:py-32" id="team">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Our team</h2>
-        <p class="mt-6 text-lg/8 text-gray-600">Our team brings together experts from various fields to
-          guide Digital Minds in its mission to advance research on AI consciousness and societal implications.</p>
+  <section class="about-section bg-white" id="about">
+    <div class="container text-center">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-subtitle about-subtitle">
+        Digital Minds is a leading development agency dedicated to innovation and technical excellence. Our mission is to bridge the gap between complex client needs and seamless user experiences through clean, efficient code.
+      </p>
+    </div>
+  </section>
+
+  <section class="team-section bg-white" id="team">
+    <div class="container">
+      <div class="team-header">
+        <h2 class="section-title text-left">Our team</h2>
+        <p class="section-subtitle text-left">Our team brings together experts from various fields to guide Digital Minds in its mission to advance research on AI consciousness and societal implications.</p>
       </div>
-      <ul role="list"
-        class="mx-auto mt-20 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6">
-        <li>
-          <img src="./img/stuff/ceo_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Tim Cook</h3>
-          <p class="text-sm/6 text-gray-600">CEO</p>
+      
+      <ul class="team-grid">
+<li class="team-member">
+          <img src="./img/stuff/ceo_image.jpg.large.jpg" alt="Tim Cook" class="team-img" />
+          <h3 class="team-name">Tim Cook</h3>
+          <p class="team-role">CEO</p>
         </li>
-        <li>
-          <img src="./img/stuff/greg-joswiak.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Greg Joswiak</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Worldwide Marketing</p>
+        <li class="team-member">
+          <img src="./img/stuff/srvpgeneralcounsel_image.jpg.large.jpg" alt="Katherine Adams" class="team-img" />
+          <h3 class="team-name">Katherine Adams</h3>
+          <p class="team-role">SVP, General Counsel and Secretary</p>
         </li>
-        <li>
-          <img src="./img/stuff/Deirdre-O-Brien.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Deirdre O'Brien</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Retail</p>
+        <li class="team-member">
+          <img src="./img/stuff/Eddy_Cue.jpg.large.jpg" alt="Eddy Cue" class="team-img" />
+          <h3 class="team-name">Eddy Cue</h3>
+          <p class="team-role">SVP, Services</p>
         </li>
-        <li>
-          <img src="./img/stuff/Eddy_Cue.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Eddy Cue</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Services</p>
+        <li class="team-member">
+          <img src="./img/stuff/srvpsoftwareengineering_image.jpg.large.jpg" alt="Craig Federighi" class="team-img" />
+          <h3 class="team-name">Craig Federighi</h3>
+          <p class="team-role">SVP, Software Engineering</p>
         </li>
-        <li>
-          <img src="./img/stuff/Mike_Fenger.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Mike Fenger</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Hardware Technologies</p>
+        <li class="team-member">
+          <img src="./img/stuff/greg-joswiak.jpg.large.jpg" alt="Greg Joswiak" class="team-img" />
+          <h3 class="team-name">Greg Joswiak</h3>
+          <p class="team-role">SVP, Worldwide Marketing</p>
         </li>
-        <li>
-          <img src="./img/stuff/Molly_Anderson.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Molly Anderson</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Worldwide Marketing</p>
+        <li class="team-member">
+          <img src="./img/stuff/Sabih_Khan_image.jpg.large.jpg" alt="Sabih Khan" class="team-img" />
+          <h3 class="team-name">Sabih Khan</h3>
+          <p class="team-role">Chief Operating Officer</p>
         </li>
-        <li>
-          <img src="./img/stuff/Sabih_Khan_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Sabih Khan</h3>
-          <p class="text-sm/6 text-gray-600">SVP, Operations</p>
+        <li class="team-member">
+          <img src="./img/stuff/Deirdre-O-Brien.jpg.large.jpg" alt="Deirdre O'Brien" class="team-img" />
+          <h3 class="team-name">Deirdre O'Brien</h3>
+          <p class="team-role">SVP, Retail</p>
         </li>
-        <li>
-          <img src="./img/stuff/Steve_Lemay.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Steve Lemay</h3>
-          <p class="text-sm/6 text-gray-600">VP, Product Design</p>
+        <li class="team-member">
+          <img src="./img/stuff/Kevan_Parekh.jpg.large.jpg" alt="Kevan Parekh" class="team-img" />
+          <h3 class="team-name">Kevan Parekh</h3>
+          <p class="team-role">SVP and CFO</p>
         </li>
-        <li>
-          <img src="./img/stuff/Jennifer_Newstead.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Jennifer Newstead</h3>
-          <p class="text-sm/6 text-gray-600">VP, General Counsel</p>
+        <li class="team-member">
+          <img src="./img/stuff/Molly_Anderson.jpg.large.jpg" alt="Molly Anderson" class="team-img" />
+          <h3 class="team-name">Molly Anderson</h3>
+          <p class="team-role">VP, Industrial Design</p>
         </li>
-        <li>
-          <img src="./img/stuff/Kevan_Parekh.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Kevan Parekh</h3>
-          <p class="text-sm/6 text-gray-600">CFO</p>
+        <li class="team-member">
+          <img src="./img/stuff/Mike_Fenger.jpg.large.jpg" alt="Mike Fenger" class="team-img" />
+          <h3 class="team-name">Mike Fenger</h3>
+          <p class="team-role">VP, Worldwide Sales</p>
         </li>
-        <li>
-          <img src="./img/stuff/greaterchina_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Isabel Ge Mahe</h3>
-          <p class="text-sm/6 text-gray-600">Greater China</p>
+        <li class="team-member">
+          <img src="./img/stuff/Steve_Lemay.jpg.large.jpg" alt="Steve Lemay" class="team-img" />
+          <h3 class="team-name">Steve Lemay</h3>
+          <p class="team-role">VP, Human Interface Design</p>
         </li>
-        <li>
-          <img src="./img/stuff/corporatedevelopment_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Adrian Perica</h3>
-          <p class="text-sm/6 text-gray-600">Corporate Development</p>
+        <li class="team-member">
+          <img src="./img/stuff/greaterchina_image.jpg.large.jpg" alt="Isabel Ge Mahe" class="team-img" />
+          <h3 class="team-name">Isabel Ge Mahe</h3>
+          <p class="team-role">VP and Managing Director of Greater China</p>
         </li>
-        <li>
-          <img src="./img/stuff/kristin_huguet_quayle_landing.png.large.png" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Kristin Huguet Quayle</h3>
-          <p class="text-sm/6 text-gray-600">VP, Finance</p>
+        <li class="team-member">
+          <img src="./img/stuff/corporatedevelopment_image.jpg.large.jpg" alt="Adrian Perica" class="team-img" />
+          <h3 class="team-name">Adrian Perica</h3>
+          <p class="team-role">VP, Corporate Development</p>
         </li>
-        <li>
-          <img src="./img/stuff/srvpsoftwareengineering_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Craig Federighi</h3>
-          <p class="text-sm/6 text-gray-600">Software Engineering</p>
-        </li>
-        <li>
-          <img src="./img/stuff/srvpgeneralcounsel_image.jpg.large.jpg" alt=""
-            class="mx-auto size-24 rounded-full outline-1 -outline-offset-1 outline-black/5 object-cover" />
-          <h3 class="mt-6 text-base/7 font-semibold tracking-tight text-gray-900">Katherine Adams</h3>
-          <p class="text-sm/6 text-gray-600">General Counsel</p>
+        <li class="team-member">
+          <img src="./img/stuff/kristin_huguet_quayle_landing.png.large.png" alt="Kristin Huguet Quayle" class="team-img" />
+          <h3 class="team-name">Kristin Huguet Quayle</h3>
+          <p class="team-role">VP, Worldwide Communications</p>
         </li>
       </ul>
     </div>
+  </section>
 
-  </div>
-  <div class="bg-white py-24 sm:py-32" id="resources">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Resources</h2>
-        <p class="mt-2 text-lg/8 text-gray-600">Learn from our experts about new developments and insights.</p>
+  <section class="resources-section bg-white" id="resources">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Resources</h2>
+        <p class="section-subtitle">Learn from our experts about new developments and insights.</p>
       </div>
-      <div
-        class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
-          <img src="./img/html.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
-          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
-          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
-
-          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-            <time datetime="2020-03-16" class="mr-8">Mar 16, 2026</time>
+      
+      <div class="resource-grid">
+        <article class="resource-card">
+          <img src="./img/html.png" alt="HTML" class="resource-bg-img" />
+          <div class="resource-overlay"></div>
+          <div class="resource-border"></div>
+          <div class="resource-meta">
+            <time datetime="2026-03-16">Mar 16, 2026</time>
           </div>
-          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+          <h3 class="resource-title">
             <a href="https://www.w3schools.com/html/default.asp" target="_blank">
-              <span class="absolute inset-0"></span>
+              <span class="full-link"></span>
               Starting with HTML: a beginner's guide to building your first webpage
             </a>
           </h3>
         </article>
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
-          <img src="./img/css.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
-          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
-          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
-
-          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-            <time datetime="2020-03-10" class="mr-8">Mar 10, 2026</time>
+        
+        <article class="resource-card">
+          <img src="./img/css.png" alt="CSS" class="resource-bg-img" />
+          <div class="resource-overlay"></div>
+          <div class="resource-border"></div>
+          <div class="resource-meta">
+            <time datetime="2026-03-10">Mar 10, 2026</time>
           </div>
-          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+          <h3 class="resource-title">
             <a href="https://www.w3schools.com/css/default.asp" target="_blank">
-              <span class="absolute inset-0"></span>
+              <span class="full-link"></span>
               Style your site: an introduction to CSS for beginners
             </a>
           </h3>
         </article>
-        <article
-          class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pt-80 pb-8 sm:pt-48 lg:pt-80">
-          <img src="./img/js.png" alt="" class="absolute inset-0 -z-10 size-full object-cover object-top" />
-          <div class="absolute inset-0 -z-10 bg-linear-to-t from-gray-900 via-gray-900/40"></div>
-          <div class="absolute inset-0 -z-10 rounded-2xl inset-ring inset-ring-gray-900/10"></div>
-
-          <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
-            <time datetime="2020-02-12" class="mr-8">Feb 12, 2026</time>
+        
+        <article class="resource-card">
+          <img src="./img/js.png" alt="JavaScript" class="resource-bg-img" />
+          <div class="resource-overlay"></div>
+          <div class="resource-border"></div>
+          <div class="resource-meta">
+            <time datetime="2026-02-12">Feb 12, 2026</time>
           </div>
-          <h3 class="mt-3 text-lg/6 font-semibold text-white">
+          <h3 class="resource-title">
             <a href="https://www.w3schools.com/js/default.asp" target="_blank">
-              <span class="absolute inset-0"></span>
+              <span class="full-link"></span>
               Javascript for beginners: what you need to know to get started
             </a>
           </h3>
         </article>
       </div>
     </div>
-  </div>
-  <div class="relative isolate overflow-hidden bg-white py-24 sm:py-32" id="join">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Work with us</h2>
-        <p class="mt-8 text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">Discover how you can make an impact:
-          see our areas of work,
-          worldwide locations and opportunities for students.</p>
+  </section>
+
+  <section class="join-section bg-white" id="join">
+    <div class="container">
+      <div class="join-header">
+        <h2 class="section-title text-left xl-title">Work with us</h2>
+        <p class="join-subtitle">Discover how you can make an impact: see our areas of work, worldwide locations and opportunities for students.</p>
       </div>
-      <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-        <dl class="mt-16 sm:mt-20">
-          <span class="font-medium text-gray-900">Job requirements</span>
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-6">
-            <div class="flex flex-col-reverse gap-1">
-              <dt class="text-base/7 text-gray-700">Experience required</dt>
-              <dd class="text-4xl font-semibold tracking-tight text-gray-900">2+ yrs</dd>
+      
+      <div class="stats-container">
+        <dl class="stats-list">
+          <span class="stats-label">Job requirements</span>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <dt class="stat-title">Experience required</dt>
+              <dd class="stat-value">2+ yrs</dd>
             </div>
-            <div class="flex flex-col-reverse gap-1">
-              <dt class="text-base/7 text-gray-700">Remote flexibility</dt>
-              <dd class="text-4xl font-semibold tracking-tight text-gray-900">100%</dd>
+            <div class="stat-item">
+              <dt class="stat-title">Remote flexibility</dt>
+              <dd class="stat-value">100%</dd>
             </div>
-            <div class="flex flex-col-reverse gap-1">
-              <dt class="text-base/7 text-gray-700">GCSE</dt>
-              <dd class="text-4xl font-semibold tracking-tight text-gray-900">5+</dd>
+            <div class="stat-item">
+              <dt class="stat-title">GCSE</dt>
+              <dd class="stat-value">5+</dd>
             </div>
-            <div class="flex flex-col-reverse gap-1">
-              <dt class="text-base/7 text-gray-700">Starting salary</dt>
-              <dd class="text-4xl font-semibold tracking-tight text-gray-900">$25k+</dd>
+            <div class="stat-item">
+              <dt class="stat-title">Starting salary</dt>
+              <dd class="stat-value">$25k+</dd>
             </div>
           </div>
         </dl>
       </div>
     </div>
-  </div>
-  <div class="relative isolate bg-white" id="contact">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-      <div class="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
-        <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-          <h2 class="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">Get in touch</h2>
-          <p class="mt-6 text-lg/8 text-gray-600">Want to learn more and join our team? Contact us to discuss career
-            opportunities,
-            research collaborations, or any questions you may have.</p>
-          <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
-            <div class="flex gap-x-4">
-              <dt class="flex-none">
+  </section>
+
+  <section class="contact-section bg-white" id="contact">
+    <div class="contact-grid">
+      
+      <div class="contact-info">
+        <div class="contact-info-inner">
+          <h2 class="section-title text-left">Get in touch</h2>
+          <p class="section-subtitle text-left contact-subtitle">Want to learn more and join our team? Contact us to discuss career opportunities, research collaborations, or any questions you may have.</p>
+          
+          <dl class="contact-list">
+            <div class="contact-item">
+              <dt>
                 <span class="sr-only">Address</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                  aria-hidden="true" class="h-7 w-6 text-gray-400">
-                  <path
-                    d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon icon-contact">
+                  <path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
               <dd>King's Rd, Reading, United Kingdom</dd>
             </div>
-            <div class="flex gap-x-4">
-              <dt class="flex-none">
+            <div class="contact-item">
+              <dt>
                 <span class="sr-only">Telephone</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                  aria-hidden="true" class="h-7 w-6 text-gray-400">
-                  <path
-                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon icon-contact">
+                  <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
-              <dd><a href="tel:+44 0800 612 6008" class="hover:text-gray-900">+ 44 0800 612 6008</a></dd>
+              <dd><a href="tel:+4408006126008" class="contact-link">+ 44 0800 612 6008</a></dd>
             </div>
-            <div class="flex gap-x-4">
-              <dt class="flex-none">
+            <div class="contact-item">
+              <dt>
                 <span class="sr-only">Email</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
-                  aria-hidden="true" class="h-7 w-6 text-gray-400">
-                  <path
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon icon-contact">
+                  <path d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </dt>
-              <dd><a href="mailto:hello@digitalminds.com" class="hover:text-gray-900">hello@digitalminds.com</a></dd>
+              <dd><a href="mailto:hello@digitalminds.com" class="contact-link">hello@digitalminds.com</a></dd>
             </div>
           </dl>
         </div>
       </div>
-      <form action="#" method="POST" class="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48">
-        <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-            <div>
-              <label for="first-name" class="block text-sm/6 font-semibold text-gray-900">First name</label>
-              <div class="mt-2.5">
-                <input id="first-name" type="text" name="first-name" autocomplete="given-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+
+      <form action="#" method="POST" class="contact-form">
+        <div class="form-inner">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="first-name" class="form-label">First name</label>
+              <div class="input-wrapper">
+                <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="form-input" />
               </div>
             </div>
-            <div>
-              <label for="last-name" class="block text-sm/6 font-semibold text-gray-900">Last name</label>
-              <div class="mt-2.5">
-                <input id="last-name" type="text" name="last-name" autocomplete="family-name"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            <div class="form-group">
+              <label for="last-name" class="form-label">Last name</label>
+              <div class="input-wrapper">
+                <input id="last-name" type="text" name="last-name" autocomplete="family-name" class="form-input" />
               </div>
             </div>
-            <div class="sm:col-span-2">
-              <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
-              <div class="mt-2.5">
-                <input id="email" type="email" name="email" autocomplete="email"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            <div class="form-group full-width">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-wrapper">
+                <input id="email" type="email" name="email" autocomplete="email" class="form-input" />
               </div>
             </div>
-            <div class="sm:col-span-2">
-              <label for="phone-number" class="block text-sm/6 font-semibold text-gray-900">Phone number</label>
-              <div class="mt-2.5">
-                <input id="phone-number" type="tel" name="phone-number" autocomplete="tel"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600" />
+            <div class="form-group full-width">
+              <label for="phone-number" class="form-label">Phone number</label>
+              <div class="input-wrapper">
+                <input id="phone-number" type="tel" name="phone-number" autocomplete="tel" class="form-input" />
               </div>
             </div>
-            <div class="sm:col-span-2">
-              <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message</label>
-              <div class="mt-2.5">
-                <textarea id="message" name="message" rows="4"
-                  class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+            <div class="form-group full-width">
+              <label for="message" class="form-label">Message</label>
+              <div class="input-wrapper">
+                <textarea id="message" name="message" rows="4" class="form-input"></textarea>
               </div>
             </div>
           </div>
-          <div class="mt-8 flex justify-end">
-            <button type="submit"
-              class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send
-              message</button>
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Send message</button>
           </div>
         </div>
       </form>
+
     </div>
-  </div>
-  <footer class="bg-white">
-    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-      <nav aria-label="Footer" class="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6">
-        <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-        <a href="#team" class="text-gray-600 hover:text-gray-900">Our Team</a>
-        <a href="#resources" class="text-gray-600 hover:text-gray-900">Resources</a>
-        <a href="#join" class="text-gray-600 hover:text-gray-900">Join Us</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <nav aria-label="Footer" class="footer-nav">
+        <a href="#about" class="footer-link">About</a>
+        <a href="#team" class="footer-link">Our Team</a>
+        <a href="#resources" class="footer-link">Resources</a>
+        <a href="#join" class="footer-link">Join Us</a>
       </nav>
-      <p class="mt-10 text-center text-sm/6 text-gray-600">&copy; 2026 Digital Minds. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 Digital Minds. All rights reserved.</p>
     </div>
   </footer>
 
 </body>
-
 </html>
