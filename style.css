@@ -195,7 +195,6 @@ ul, dl {
 }
 
 .mobile-dialog {
-  display: none;
   border: none;
   background: transparent;
   padding: 0;
@@ -204,7 +203,8 @@ ul, dl {
   margin: 0;
 }
 .mobile-dialog::backdrop {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
 }
 
 .dialog-focus-trap {
